@@ -3,8 +3,7 @@ Politecnico of Turin Thesis: "Implementation and Evaluation of an Educational Ch
 
 # GENERATE TOKEN SLACK
 NB: REMEMBER TO REGENERATE SLACK TOKENS AND CHANNEL ID IF ARE DISABLE (SEE THESIS PDF)
-- Go on your Slack App in api.slack.com/apps -> select your app or create new -> Settings -> Install App -> (regenerate two tokens) -> Copy Tokens in `actions/Constants.py` file
-
+- Go on your Slack App ( [App Slack](api.slack.com/apps) )-> select your app or create new -> Settings -> Install App -> (regenerate two tokens) -> Copy Tokens in `actions/Constants.py` file
 # RASA - LOCAL MODE
 ## Components Installation
 
@@ -20,7 +19,7 @@ NB: REMEMBER TO REGENERATE SLACK TOKENS AND CHANNEL ID IF ARE DISABLE (SEE THESI
 MORE INFO: See this video: [link](https://www.youtube.com/watch?v=4ewIABo0OkU&list=PL75e0qA87dlEWUA5ToqLLR026wIkk2evk&index=1)
 
 ## Code Execution
-- First, in `TESI_NLP` directory do the training in anaconda console with `venv` activate:
+- First, in `TESI_POLI_POBOT` directory do the training in anaconda console with `venv` activate:
   - `rasa train --config configs/{file_cofiguration}.yml --fixed-model-name {model_name}`
 
 - After run server rasa:
@@ -65,7 +64,7 @@ To Connect also the ACTION Server Rasa:
     `pip install --upgrade pip`
 
 ## Code Execution
-- First, in `TESI_NLP` directory do the training in anaconda console with `venv` activate:
+- First, in `TESI_POLI_POBOT` directory do the training in anaconda console with `venv` activate:
   - `set PYTHONUTF8=1`
   - `rasa x --connector slack --config configs/{file_cofiguration}.yml`
    
@@ -107,14 +106,14 @@ docker-compose down
 docker-compose up -d
 ```
 
-Otherwise, in `TESI_NLP` directory in console run only this command:
+Otherwise, in `TESI_POLI_POBOT` directory in console run only this command:
 - `docker-compose up -d`
 
 ## Rasa Bot - Slack Connection
 
 After all container is in running mode, in web browser go in `http:://localhost:80' and insert the password choose the first time. (i.e. password)
 
-If rasa x server not contain NLU data (possible first time) you can upload the file directly using interface of rasa x server in `Training -> NLU data / Stories / Rules / Configuration (copy and paste the content of config choose in TESI_NLP directory)`  
+If rasa x server not contain NLU data (possible first time) you can upload the file directly using interface of rasa x server in `Training -> NLU data / Stories / Rules / Configuration (copy and paste the content of config choose in TESI_POLI_POBOT directory)`  
 
 If you want to connect to slack:
 - after  training and running the server in Anaconda console (see `## Execution of code` paragraph): 

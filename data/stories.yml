@@ -1,0 +1,315 @@
+version: "2.0"
+stories:
+- story: question form 1
+  steps:
+  - intent: ask_prof
+  - action: utter_text
+  - slot_was_set:
+     - question: null
+  - action: question_form
+  - active_loop: question_form
+  - active_loop: null
+  - action: action_send_help
+
+- story: answer
+  steps:
+  - intent: answer
+  - action: action_answer
+
+- story: PO hineritance with advantages
+  steps:
+  - intent: hineritance
+  - action: utter_hineritance
+  - intent: advantages
+  - action: utter_hineritance_advantages
+  - action: utter_doubt
+  - checkpoint: check_doubt
+
+- story: PO override
+  steps:
+  - intent: override
+  - action: utter_override
+  - action: utter_doubt
+  - checkpoint: check_doubt
+
+- story: PO polymorphism
+  steps:
+  - intent: polymorphism
+  - action: utter_polymorphism
+  - action: utter_doubt
+  - checkpoint: check_doubt
+
+- story: PO dynamic binding
+  steps:
+  - intent: dynamic_binding
+  - action: utter_dynamic_binding
+  - action: utter_doubt
+  - checkpoint: check_doubt
+
+- story: PO casting
+  steps:
+  - intent: casting
+  - action: utter_casting
+  - action: utter_doubt
+  - checkpoint: check_doubt
+
+- story: PO upcasting
+  steps:
+  - intent: upcasting
+  - action: utter_upcasting
+  - action: utter_doubt
+  - checkpoint: check_doubt
+
+- story: PO downcasting
+  steps:
+  - intent: downcasting
+  - action: utter_downcasting
+  - action: utter_doubt
+  - checkpoint: check_doubt
+
+- story: PO visibility
+  steps:
+  - intent: visibility
+  - action: utter_visibility
+  - action: utter_doubt
+  - checkpoint: check_doubt
+
+- story: PO hineritance constructor
+  steps:
+  - intent: hineritance_constructor
+  - action: utter_hineritance_constructor
+  - action: utter_doubt
+  - checkpoint: check_doubt
+
+- story: PO method super
+  steps:
+  - intent: super
+  - action: utter_super
+  - action: utter_doubt
+  - checkpoint: check_doubt
+
+- story: PO class object
+  steps:
+  - intent: class_object
+  - action: utter_class_object
+  - action: utter_doubt
+  - checkpoint: check_doubt
+
+- story: PO abstract class
+  steps:
+  - intent: class_abstract
+  - action: utter_class_abstract
+  - action: utter_doubt
+  - checkpoint: check_doubt
+
+- story: PO comparable
+  steps:
+  - intent: comparable
+  - action: utter_comparable
+  - action: utter_doubt
+  - checkpoint: check_doubt
+
+- story: PO comparator
+  steps:
+  - intent: comparator
+  - action: utter_comparator
+  - action: utter_doubt
+  - checkpoint: check_doubt
+
+- story: PO iterator iterable
+  steps:
+  - intent: iterator_iterable
+  - action: utter_iterator_iterable
+  - action: utter_doubt
+  - checkpoint: check_doubt
+
+- story: PO observer observable
+  steps:
+  - intent: observer_observable
+  - action: utter_observer_observable
+  - action: utter_doubt
+  - checkpoint: check_doubt
+
+- story: PO lambda
+  steps:
+  - intent: lambda
+  - action: utter_anonymous_class
+  - action: utter_lambda
+  - action: utter_doubt
+  - checkpoint: check_doubt
+
+- story: PO method reference
+  steps:
+  - intent: method_reference
+  - action: utter_method_reference
+  - action: utter_doubt
+  - checkpoint: check_doubt
+
+- story: PO class object doubt
+  steps:
+  - intent: object_methods_doubt
+  - action: utter_object_methods_doubt
+  - action: utter_doubt
+  - checkpoint: check_doubt
+
+- story: PO static
+  steps:
+  - intent: static_final_doubt
+  - action: utter_static_final_doubt
+  - action: utter_doubt
+  - checkpoint: check_doubt
+
+- story: PO variable main
+  steps:
+  - intent: visibility_variables_main
+  - action: utter_visibility_variables_main
+  - action: utter_doubt
+  - checkpoint: check_doubt
+
+- story: PO anonym class doubt
+  steps:
+  - intent: anonym_class_doubt
+  - action: utter_anonym_class_doubt
+  - action: utter_doubt
+  - checkpoint: check_doubt
+
+- story: PO method equals
+  steps:
+  - intent: equals_doubt
+  - action: utter_equals_doubt
+  - action: utter_doubt
+  - checkpoint: check_doubt
+
+- story: PO arraysort_pattern
+  steps:
+  - intent: arraysort_pattern_doubt
+  - action: utter_arraysort_pattern_doubt
+  - action: utter_doubt
+  - checkpoint: check_doubt
+
+- story: PO charAt_doubt
+  steps:
+  - intent: charAt_doubt
+  - action: utter_charAt_doubt
+  - action: utter_doubt
+  - checkpoint: check_doubt
+
+- story: PO general
+  steps:
+  - intent: class_general_doubt
+  - action: utter_class_general_doubt
+  - action: utter_doubt
+  - checkpoint: check_doubt
+
+- story: PO referent_methods_doubt
+  steps:
+  - intent: referent_methods_doubt
+  - action: utter_referent_methods_doubt
+  - action: utter_doubt
+  - checkpoint: check_doubt
+
+- story: PO comparing_doubt
+  steps:
+  - intent: comparing_doubt
+  - action: utter_comparing_doubt
+  - action: utter_doubt
+  - checkpoint: check_doubt
+
+- story: PO difference_dynamic_bind_upcast
+  steps:
+  - intent: difference_dynamic_bind_upcast
+  - action: utter_difference_dynamic_bind_upcast
+  - action: utter_doubt
+  - checkpoint: check_doubt
+
+- story: affirm
+  steps:
+  - checkpoint: check_doubt
+  - intent: affirm
+  - action: utter_affirm
+
+- story: deny
+  steps:
+  - checkpoint: check_doubt
+  - intent: deny
+  - action: utter_sorry
+  - action: utter_deny
+
+- story: functional_interface
+  steps:
+  - intent: functional_interface
+  - action: utter_functional_interface
+  - action: utter_doubt
+  - checkpoint: check_doubt
+
+- story: default_methods
+  steps:
+  - intent: default_methods
+  - action: utter_default_methods
+  - action: utter_doubt
+  - checkpoint: check_doubt
+
+- story: static_methods
+  steps:
+  - intent: static_methods
+  - action: utter_static_methods
+  - action: utter_doubt
+  - checkpoint: check_doubt
+
+- story: final
+  steps:
+  - intent: final
+  - action: utter_final
+  - action: utter_doubt
+  - checkpoint: check_doubt
+
+- story: this
+  steps:
+  - intent: this
+  - action: utter_this
+  - action: utter_doubt
+  - checkpoint: check_doubt
+
+- story: instanceof
+  steps:
+  - intent: instanceof
+  - action: utter_instanceof
+  - action: utter_doubt
+  - checkpoint: check_doubt
+
+- story: terminology
+  steps:
+  - intent: terminology
+  - action: utter_terminology
+  - action: utter_doubt
+  - checkpoint: check_doubt
+
+- story: hineritance_tree
+  steps:
+  - intent: hineritance_tree
+  - action: utter_hineritance_tree
+  - action: utter_doubt
+  - checkpoint: check_doubt
+
+- story: PO interface with advantages
+  steps:
+  - intent: interface
+  - action: utter_interface
+  - intent: advantages
+  - action: utter_interface_advantages
+  - action: utter_doubt
+  - checkpoint: check_doubt
+
+- story: PO anonymous class
+  steps:
+  - intent: anonymous_class
+  - action: utter_anonymous_class
+  - action: utter_doubt
+  - checkpoint: check_doubt
+
+- story: factory methods
+  steps:
+  - intent: factory_methods
+  - action: utter_factory_methods
+  - action: utter_doubt
+  - checkpoint: check_doubt

@@ -1,0 +1,51 @@
+version: "2.0"
+stories:
+- story: Say goodbye anytime the user says goodbye (.\tests\test_stories.yml)
+  steps:
+  - intent: goodbye  # predicted: greet: Arrivederci!
+  - action: utter_goodbye
+- story: PO comparator1 > deny (.\tests\test_stories.yml)
+  steps:
+  - intent: comparator  # predicted: referent_methods_doubt: Invece non ho capito bene questo blocco di codice: (as1 è un array di Student)\n\nArrays.sort(as1, new Comparator() {   //Uso di una classe anonima\n\t\t\t\n\t\t\tpublic int compare(Object a, Object b) {//è un Override\n\t\t\t\tStudent sa = (Student) a;\n\t\t\t\tStudent sb = (Student) b;\n\t\t\t\t\n\t\t\t\treturn sa.getName().compareTo(sb.getName());\n\t\t\t}\n\t\t});\n\nNon riesco a capire bene il meccanismo che ci sta dietro. A quanto ho capito, java.util.Arrays implementa varie versioni di sort, con signature diverse. Una di queste prevede un array e un comparatore (come abbiamo fatto con StudentComparatorIdCresc/Desc).\nCostruiamo quindi il comparatore sul momento, facendo l'Override di 'compare()' rispetto a java.util.Comparator. Anche compareTo() ha varie signature possibili, una delle quali con le stringhe, come quella che usiamo, che quindi confronta le due stringhe ordinandole.\n\nE' un ragionamento corretto?
+  - action: utter_comparator
+  - action: utter_doubt
+  - intent: deny
+  - action: utter_sorry
+  - action: utter_deny
+- story: PO comparator2 > deny (.\tests\test_stories.yml)
+  steps:
+  - intent: comparator  # predicted: referent_methods_doubt: Nell'esempio:\n\n```Arrays.sort (s, (s1,s2) -&gt; {\n\t\t\tStudent ss1 = (Student) s1;\n\t\t\tStudent ss2 = (Student) s2;\n\t\t\treturn (ss1.getLastName().compareTo(ss2.getLastName())); \n\t\t}     );\nfor (Student ps: s) {\n\tSystem.out.println (ps);\n}```\ncosa sono s1, s2, o meglio come fanno a prendere i valori s[0], s[1] ecc e che relazione c'è con `Comparator`\n\ncioè io ho capito che scrivendo questo in pratica dico a `sort` come gestire `Comparator`, però non ho capito come fa a capirlo che io voglio fare l'override proprio di quello?
+  - action: utter_comparator
+  - action: utter_doubt
+  - intent: deny
+  - action: utter_sorry
+  - action: utter_deny
+- story: PO class object > deny (.\tests\test_stories.yml)
+  steps:
+  - intent: class_object  # predicted: this: Mi racconteresti qualcosa della classe Object?
+  - action: utter_class_object
+  - action: utter_doubt
+  - intent: deny
+  - action: utter_sorry
+  - action: utter_deny
+- story: PO comparator1 > affirm (.\tests\test_stories.yml)
+  steps:
+  - intent: comparator  # predicted: referent_methods_doubt: Invece non ho capito bene questo blocco di codice: (as1 è un array di Student)\n\nArrays.sort(as1, new Comparator() {   //Uso di una classe anonima\n\t\t\t\n\t\t\tpublic int compare(Object a, Object b) {//è un Override\n\t\t\t\tStudent sa = (Student) a;\n\t\t\t\tStudent sb = (Student) b;\n\t\t\t\t\n\t\t\t\treturn sa.getName().compareTo(sb.getName());\n\t\t\t}\n\t\t});\n\nNon riesco a capire bene il meccanismo che ci sta dietro. A quanto ho capito, java.util.Arrays implementa varie versioni di sort, con signature diverse. Una di queste prevede un array e un comparatore (come abbiamo fatto con StudentComparatorIdCresc/Desc).\nCostruiamo quindi il comparatore sul momento, facendo l'Override di 'compare()' rispetto a java.util.Comparator. Anche compareTo() ha varie signature possibili, una delle quali con le stringhe, come quella che usiamo, che quindi confronta le due stringhe ordinandole.\n\nE' un ragionamento corretto?
+  - action: utter_comparator
+  - action: utter_doubt
+  - intent: affirm
+  - action: utter_affirm
+- story: PO comparator2 > affirm (.\tests\test_stories.yml)
+  steps:
+  - intent: comparator  # predicted: referent_methods_doubt: Nell'esempio:\n\n```Arrays.sort (s, (s1,s2) -&gt; {\n\t\t\tStudent ss1 = (Student) s1;\n\t\t\tStudent ss2 = (Student) s2;\n\t\t\treturn (ss1.getLastName().compareTo(ss2.getLastName())); \n\t\t}     );\nfor (Student ps: s) {\n\tSystem.out.println (ps);\n}```\ncosa sono s1, s2, o meglio come fanno a prendere i valori s[0], s[1] ecc e che relazione c'è con `Comparator`\n\ncioè io ho capito che scrivendo questo in pratica dico a `sort` come gestire `Comparator`, però non ho capito come fa a capirlo che io voglio fare l'override proprio di quello?
+  - action: utter_comparator
+  - action: utter_doubt
+  - intent: affirm
+  - action: utter_affirm
+- story: PO class object > affirm (.\tests\test_stories.yml)
+  steps:
+  - intent: class_object  # predicted: this: Mi racconteresti qualcosa della classe Object?
+  - action: utter_class_object
+  - action: utter_doubt
+  - intent: affirm
+  - action: utter_affirm

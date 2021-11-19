@@ -1,0 +1,490 @@
+version: '2.0'
+config:
+  store_entities_as_slots: true
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+intents:
+- greet:
+    use_entities: true
+- goodday:
+    use_entities: true
+- goodbye:
+    use_entities: true
+- affirm:
+    use_entities: true
+- deny:
+    use_entities: true
+- hineritance:
+    use_entities: true
+- bot:
+    use_entities: true
+- ask_prof:
+    use_entities: true
+- thanks:
+    use_entities: true
+- slides:
+    use_entities: true
+- GUI:
+    use_entities: true
+- eclipse:
+    use_entities: true
+- override:
+    use_entities: true
+- polymorphism:
+    use_entities: true
+- dynamic_binding:
+    use_entities: true
+- casting:
+    use_entities: true
+- upcasting:
+    use_entities: true
+- downcasting:
+    use_entities: true
+- visibility:
+    use_entities: true
+- hineritance_constructor:
+    use_entities: true
+- super:
+    use_entities: true
+- class_object:
+    use_entities: true
+- class_abstract:
+    use_entities: true
+- interface:
+    use_entities: true
+- comparable:
+    use_entities: true
+- iterator_iterable:
+    use_entities: true
+- comparator:
+    use_entities: true
+- observer_observable:
+    use_entities: true
+- lambda:
+    use_entities: true
+- method_reference:
+    use_entities: true
+- object_methods_doubt:
+    use_entities: true
+- static_final_doubt:
+    use_entities: true
+- visibility_variables_main:
+    use_entities: true
+- anonym_class_doubt:
+    use_entities: true
+- answer:
+    use_entities: true
+- equals_doubt:
+    use_entities: true
+- arraysort_pattern_doubt:
+    use_entities: true
+- charAt_doubt:
+    use_entities: true
+- class_general_doubt:
+    use_entities: true
+- factory_methods:
+    use_entities: true
+- referent_methods_doubt:
+    use_entities: true
+- comparing_doubt:
+    use_entities: true
+- difference_dynamic_bind_upcast:
+    use_entities: true
+- hineritance_tree:
+    use_entities: true
+- instanceof:
+    use_entities: true
+- this:
+    use_entities: true
+- final:
+    use_entities: true
+- pattern:
+    use_entities: true
+- static_methods:
+    use_entities: true
+- default_methods:
+    use_entities: true
+- functional_interface:
+    use_entities: true
+- terminology:
+    use_entities: true
+- advantages:
+    use_entities: true
+- anonymous_class:
+    use_entities: true
+entities:
+- idRiq
+- accepted
+- idProf
+slots:
+  question:
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: true
+responses:
+  utter_default:
+  - text: Mi dispiace ma non ho proprio capito cosa intendi... Se vuoi puoi chiedermi di contattare il docente!
+  utter_text:
+  - text: Scrivi la domanda da porre al docente/borsista. Non appena avrà accettato la richiesta di aiuto ti arriverrà una notifica su questo canale.
+  utter_greet:
+  - text: Hey!
+  - text: Ciao!
+  - text: Buongiorno!
+  utter_goodbye:
+  - text: Arrivederci!
+  - text: Alla prossima!
+  utter_goodday:
+  - text: Buongiorno!
+  - text: Ciao!
+  utter_doubt:
+  - text: Ti è tutto chiaro?
+  - text: Hai capito tutto?
+  utter_deny:
+  - text: Prova a riformulare la domanda o se vuoi puoi chiedermi di contattare il docente per ulteriori chiarimenti.
+  utter_eclipse:
+  - text: |-
+      - Prova a riavviare il progetto, chiudendo e riaprendo Eclipse.
+      - Ulteriore verifica: crea un nuovo progetto,crea una classe con un main, copia dentro il codice e metti due variabili con i due valori fissi, poi esegui.
+      - Se non cambia nulla prova a ricopiare il codice in un nuovo progetto facendo attenzione a quale struttura, classi,... aveva il progetto originario e prova a runnare di nuovo partendo dal main.
+  utter_affirm:
+  - text: Sono contento che hai capito!
+  - text: Meno male, mi hai reso felice!
+  utter_slides:
+  - text: |-
+      Tutte le slide disponibili le trovi al seguente https://softeng.polito.it/courses/09CBI/#Lectures.
+      Se non trovi ancora le slide disponibili potrebbe essere che il docente non le abbia ancora caricate perché in revisione.
+      In questo caso potresti controllare le slide dello scorso anno al link disponibile negli avvisi: https://softeng.polito.it/courses/09CBI/#News. 
+      Stai attento, però, perché in quelle di questo anno potrebbero esserci alcune modifiche/aggiunte, quindi ti consiglio vivamente di aspettare la pubblicazione da parte del docente.
+  utter_GUI:
+  - text: Le interfacce grafiche le vedrete verso fine corso. Tendenzialmente tratterete file testuali, tipo CSV.
+  - text: Le interfacce grafiche verranno spiegate verso fine corso e  tratterete tendenzialmente file testuali o CSV.
+  utter_sorry:
+  - text: Mi dispiace che non ti sia ancora chiaro...
+  utter_thanks:
+  - text: Prego!
+  - text: Di nulla!
+  - text: Figurati!
+  utter_bot:
+  - text: Sono un bot progettato per rispondere alle domande riguardante il corso di Programmazione ad Oggetti.
+  utter_hineritance:
+  - text: |-
+      Ecco il significato di ereditarietà: un meccanismo con il quale si possono definire delle classi derivate che sono sottoclassi di una classe base.
+      La classe derivata conterrà in maniera implicita tutti gli attributi e i metodi della classe base, e inoltre può definire esplicitamente altri attributi e metodi, nuovi o sovrascritti dalla classe base usando l'override, per renderla specializzata.
+      Esempio:
+      Classe base: `Veicolo` con attributi `String targa` e `Integer Kmh`;
+      Classe derivata1: `Auto extends Veicolo` con aggiunta dell'attributo `Integer numero_porte`;
+      Classe derivata2: `Tram extends Veicolo` con aggiunta dell'attributo `Integer numero_fermate` e del metodo `bool in_servizio()`.
+  - text: |-
+      L' ereditarietà è un meccanismo con il quale si possono definire delle classi derivate che sono sottoclassi di una classe base.
+      La classe derivata conterrà in maniera implicita tutti gli attributi e i metodi della classe base, e inoltre può definire esplicitamente altri attributi e metodi, nuovi o sovrascritti dalla classe base usando l'override, per renderla specializzata.
+      Esempio:
+      Classe base: `Veicolo` con attributi `String targa` e `Integer Kmh`;
+      Classe derivata1: `Auto extends Veicolo` con aggiunta dell'attributo `Integer numero_porte`;
+      Classe derivata2: `Tram extends Veicolo` con aggiunta dell'attributo `Integer numero_fermate` e del metodo `bool in_servizio()`.
+  utter_override:
+  - text: |-
+      L'override permette di sovrascrivere dei metodi di una classe derivata ereditati da una classe base.
+      Se la classe base contiene un metodo, esempio `int somma(int a, int b)`, allora la classe derivata dovrà sovrascrivere il metodo usando `@Override` prima della definizione del metodo.
+      Esempio:
+      ```@Override 
+      int somma(int a, int b) { ... }```
+      NB: Ricorda che la firma e la visibilità del metodo sovrascritto devono essere la stesse del metodo ereditato!
+  utter_polymorphism:
+  - text: |-
+      Ecco il 'Teorema' del Polimorfismo: 
+      `un riferimento di tipo T può puntare ad un oggetto di tipo S se e solo se: S è sottoclasse o stessa classe di T.`
+      In altri termini un oggetti di classe base può puntare o a un oggetto del suo tipo o a un oggetto di un suo suo tipo derivato.
+      Inoltre una lista o vettore di oggetti di classe base possono contenere anche oggetti di classe derivata.
+      Durante il compile time il compilatore fa un check statico di esistenza dei metodi/attributi, ma solo durante il run time si accorgerà di eventuali problemi, usando il *dynamic binding*!
+      Quindi utilizza sempre il *principio di sostituibilità*:
+      Se un oggetto S (derivato) è un sottotipo di T (base), cioè usa metodi e attributi uguali alla classe base, allora T può essere sostituito con S.
+  utter_dynamic_binding:
+  - text: |-
+      Con il dynamic binding durante la fase di run time viene eseguito un controllo più accurato sul tipo di un oggetto:
+      la JVM trova la classe di appartenenza effettiva dell'oggetto e se una certa classe NON contiene un certo metodo/attributo
+      che quell'oggetto sta chiamando/usando allora risulterà esserci un errore (in pratica un oggetto base usa dei metodi che
+      appartengono solo ad un oggetto derivato dalla base).
+  utter_casting:
+  - text: |-
+      Partendo dal presupposto che ogni oggetto ha un tipo e può contenere valori solo di quel tipo, possiamo modificare il tipo di una variabili usando:
+      - *casting implicito*. Esempio: `float a = 4; //4 è un intero`
+      - *casting esplicito* se nell'assegnazione inserisco anche il tipo di dato. Esempio: `float a = (float) 4;`
+  utter_downcasting:
+  - text: |-
+      Con il downcast puoi assegnare ad un oggetto derivato un oggetto generico (usando sempre il casting esplicito).
+      Questo però potrebbe portare a problemi, infatti non è definito safe in quanto l'oggetto generico potrebbe non avere riferimenti a tutti i metodi/attributi del tipo di oggetto derivato.
+      Solitamente il compilatore riconosce a run time il downcast.
+      Puoi usare l'operatore `instanceof` per vedere il tipo di riferimento di un oggetto.
+      Se un oggetto è istanza di un altro oggetto allora puoi fare il downcast!
+  utter_upcasting:
+  - text: |-
+      Con l'upcast si può assegnare ad un oggetto generico (base) uno più specifico (derivato) rendendolo del tipo generico.
+      Esempio:
+      `Veicolo v = new Veicolo();` 
+      `Auto a = new Auto();` 
+      `Veicolo v2 = (veicolo) a;`
+      Questa operazione è sempre *safe* in quanto un oggetto derivato viene reso di tipo base.
+  utter_visibility:
+  - text: |-
+      Gli attributi e i metodi di una classe possono avere diverse visibilità:
+      - `private`: visibili solo alla classe stessa;
+      - `package`: visibili alla calsse stessa e a classi dello stesso package;
+      - `protected`: visibili alla classe stessa, a classi dello stesso package e alle sue sottoclassi;
+      - `public`: visibili a tutti, anche a classi di altri package.
+  utter_hineritance_constructor:
+  - text: |-
+      I costruttori servono per creare, alla sua chiamata, una istanza di un oggetto.
+      In ambito dell'ereditarietà, l'esecuzione dei costruttori procede in maniera top-down nella gerarchia: se una classe figlio di una classe padre (super) ha un costruttore allora verrà usato quello per creare l'oggetto, altrimenti cercherà, se la classe padre ha un costruttore esplicito senza attributi, di usare quello per creare l'istanza.
+  utter_super:
+  - text: |-
+      il `super` serve come puntatore alla classe padre (e agli eventuali suoi antenati) e può essere utilizzata nei costruttori o metodi per essere chiamati nella classi derivate (esempio se voglio sovrascrivere un costruttore o un metodo della classe base).
+      Se una classe derivata sovrascrive un metodo o un suo costruttore quello della classe base è mascherato e invisibile alla classe base.
+      `this` si riferisce quindi alla classe corrente (puntatore a sè stesso), `super` alla classe padre (puntatore alla super class).
+  utter_class_object:
+  - text: |-
+      La classe `Object` è la classe padre di tutte le classi.
+      Qualsiasi instanza di una classe può essere vista come instanza della classe `Object`.
+      Inoltre è sempre possibile fare l'upcasting di un oggetto `Object`.
+      I metodi principali della classe `Object` sono:
+      - `public toString()`: ritorna una stringa rappresentante l'oggetto;
+      - `public equals()`: controlla se due oggetti hanno lo stesso contenuto, valore;
+      - `public hashcode()`: ritorna un codice univoco dell'oggetto. Può essere usato, per esempio, come indice nelle tabelle di hash;
+      - `protected clone()`: crea una copia dell'oggetto corrente;
+      - `protected finalize()`: viene richiamato quando un oggetto non è più utilizzato (cioè quando non ci sono più riferimenti all'oggetto), prima che il garbage collector provveda a eliminarlo recuperando lo spazio;
+      Tutti i metodi publici posono essere sovrascritti dalle classi per poter essere usate come metodi.
+      Non c'è bisogno che una classe estendi dalla classe `Object` perché è già implicito essendo alla radice della gerarchia.
+  utter_class_abstract:
+  - text: |-
+      Una classe astratta è una classe che è usata per definire dei metodi e degli attributi (sia astratti che non) comuni alle classi sue derivate.
+      Non può essere instanziata in quanto i suoi metodi non contengono il corpo (body) ma solo la struttura, la firma e il nome, del metodo.
+       Una classe che deriva da una classe astratta deve implementare TUTTI i metodi ASTRATTI della classe padre, altrimenti deve essere definita astratta a sua volta.
+      Esempio di classe astratta:
+      `class abstract Foo {`
+      	`public abstract int sum(int a, int b); }`
+      E una sua classe derivata:
+      `class Fun extends Foo {`
+      	`public int sum(int a, int b){ ... } }`
+  utter_interface:
+  - text: |-
+      Le interfacce sono tipi di classe dove i metodi sono astratti implicitamente, gli attributi definiti `static` e `final` (costanti) e similmente alle classi astratte non possono essere istanziate.
+      Esempio di interfaccia:
+      ```public interface Foo {
+      	int sum(int a, int b); 
+      }```
+      E una sua classe che la implementa:
+      ```class Fun extends otherFun implements Foo {
+      	@Override
+      	int sum(int a, int b) {}
+      }```
+      NB: Un interfaccia NON può estendere una classe ma solo un'altra interfaccia.
+      Invece una classe può sia ereditare da una o più classi sia implementare una o più interfacce contemporaneamente!
+       Le interfacce possono essere usate per instanziare delle classi anonime (non hanno una definizione a parte ma sono definite "al volo" durante la creazione dell'oggetto con la keyword `new`).
+      Esempio:
+      ```Foo f = new Foo() { 
+      	public void sum(int a, int b) { 
+      	return a+b; }. 
+      }```
+      In questo caso `f` è un oggetto di classe `Foo` contenente un metodo di nome `sum`.
+  utter_comparable:
+  - text: |-
+      L'interfaccia `Comparable` contiene un unico metodo da implementare:
+      - `int compareTo(Object obj)`: confronta IL CONTENUTO dell'oggetto stesso `this` e `obj` e ritorna un valore negativo (se `this<obj`), un valore positivo (se `this>obj`) o nullo (se `obj=this`).
+      Questa interfaccia è usata quando bisogna confrontare l'istanza di oggetto con un altro oggetto (esempio se devo effettare un confronto booleano).
+  utter_iterator_iterable:
+  - text: |-
+      La classe `Iterable` contiene il metodo `iterator()` che ritorna un oggetto di tipo `Iterator`, una interfaccia.
+      `Iterator` contiene i seguenti metodi da implementare:
+      - `boolean hasNext()`: se non si punta alla fine della lista di oggetti torna `false`, altrimenti `true`;
+      - `Object next()`: ritorna l'oggetto prossimo dell'oggetto corrente puntato dalla lista e avanza di una posizione.
+      Vengono usate spesso per gestire liste di oggetti.
+  utter_comparator:
+  - text: |-
+      L'interfaccia `Comparator` è molto simile alla `Comparable` ma permette il confronto tra i VALORI di due oggetti diversi (e non tra `this` e un oggetto):
+      - il metodo da implementare è `compare(Object a, Object b)` che ritorna un valore negativo se `a<b`, valore positivo se `a>b`, nullo se `a=b`.
+      Viene spesso implementata questa interfaccia in classi che devono effettuare il confronto tra due istanze di oggetto (per esempio se devo effettuare il sort di un vettore, gli oggetti dovrebbe avere implementato il metodo `compare()`). Infatti l'Array.sort vuole come parametri il vettore e il `Comparator` (con il metodo compare) corrispondente al tipo di oggetto del vettore.
+  utter_observer_observable:
+  - text: |-
+      La classe `Observable` e l'interfaccia Observer permettono l'interazione tra un oggetto che ha bisogno di notificare, per qualche motivo, uno o più altri oggetti.
+      `Observable` contiene i seguenti metodi:
+      - `addObserver()`: permette l'aggiunta di un nuovo osservatore;
+      - `setChanged()`: notifica che lo status di un observer è cambiato;
+      - `notifyObserver()`: notifica gli altri observer riguardo il cambiamento di stato di un observer.
+      `Observer` riceve le notifiche da parte degli altri observer e modifica il suo stato attraverso il metodo `update()`.
+  utter_anonymous_class:
+  - text: |-
+      Le classi anonime sono classi che non hanno una definizione a parte ma sono definite al volo durante la creazione dell'oggetto usando la keyword `new`.
+  utter_lambda:
+  - text: |-
+      Le funzioni lambda sono un metodo più compatto di scrivere delle classi anonime che implementano delle interfaccie funzionali (come per esempio la `Comparator`).
+      La sua struttura è: `parameters -> body` dove:
+      - `parameters`: sono i parametri del metodo da chiamare che costituisce l'interfaccia. Gli attributi sono raccolti tra tonde e i tipi dei parametri possono essere omessi perché impliciti;
+      - `body`: è il corpo del metodo. Se composto da una sola riga si possono omettere l'eventuale `return` e le graffe altrimenti bisogna scrivere tutto come un blocco normale di una funzione.
+      Esempio: 
+      L'array.sort ha bisogno di due parametri:
+      - la lista di oggetti (esempio di `Student);
+      - il metodo di confronto tra gli oggetti (esempio la matricola di `Student`):
+      `Array.sort(students, (x, y) -> ((Student)x).id -((student)y).id);`
+  utter_method_reference:
+  - text: |-
+      Il method reference è una metodologia ulteriore ai lambda per scrivere in maniera compatta un metodo di una interfaccia funzionale.
+      La sintassi da scrivere è: `Container::methodName` dove:
+      - `Container`: rappresenta il nome del contenitore (oggetto, interfaccia) dove fare riferimento per chiamare il metodo;
+      - `mothodName`: il metodo da chiamare (già implementato da qualche parte);
+       Ci sono diversi tipi di method reference:
+      - *metodi statici*: richiama un metodo statico contenuto in una classe. Esempio `Math::min`;
+      - *metodo di istanza di un oggetto*: permette di invocare un metodo direttamente da un oggetto. Esempio:
+      ```String s = "12a"; 
+      IntToCharFun f = s::charAt;
+      String ris = f.apply(11);```;
+      - *riferimento di metodo di istanza*: il primo argomento del metodo è l'oggetto che lo invoca. Esempio:
+      ```StringToIntFunction f = String::length; 
+      Integer res=f.apply(s);```
+      - *riferimento al costruttore*: permette di creare una nuova istanza di un oggetto. Esempio:
+      ```IntegerBuilder b = Integer::new;
+      Integer i = b.build(2);```
+  utter_object_methods_doubt:
+  - text: |-
+      La classe Object non è vuota: in Eclipse non puoi vedere il suo contenuto perè è una classe della libreria standard per cui non è disponibile il codice sorgente, ma solo il compile code, ovvero sequenze di byte che non vengono mostrate perché di difficile lettura.
+      Se ti interessa, qui c'è il codice sorgente della classe `Object` (presa da OpenJDK, una delle implementazioni di Java)
+      http://hg.openjdk.java.net/jdk8/jdk8/jdk/file/687fd7c7986d/src/share/classes/java/lang/Object.java#l235
+  utter_static_final_doubt:
+  - text: |-
+      Un metodo "di istanza" deve essere invocato su un oggetto, ed opera (implicitamente) sugli attributi di quell'oggetto.
+      Un metodo "di classe" (`static`) viene invocato a partire dalla classe e non è riferito ad alcun oggetto (quindi non è in grado di accedere agli attributi di istanza).
+      Entrambi i metodi possono accedere agli attributi "di classe" (static) che sono comuni a tutte le istanze perché ne esiste una sola copia all'interno della classe.
+      Una classe annidata `static` non interferisce in alcun modo con i metodi `static`.
+      Una oggetto di una classe interna (non-static) da quando viene creato mantiene un link all'oggetto della classe esterna che l'ha creato, perciò può solo essere creato a partire da un metodo di istanza della classe contenitore (infatti i metodi statici non vengono eseguiti nel contesto di un oggetto).
+      La classe è un tipo, non un attributo, perciò non si può dire che gli oggetti esterni hanno un tipo in comune. Se la classe annidata è dichiarata come ‘static’ i suoi oggetti sono slegati dagli oggetti della classe esterna mentre gli oggetti delle classi interne (non-static) sono legati a singoli oggetti della classe esterna (quelli che li hanno creati)
+  utter_visibility_variables_main:
+  - text: |-
+      Le variabili locali (dichiarate dentro il main) non hanno visibilità, perché visibili solo al main. 
+      Stessa cosa vale se dichiari una classe nel main.
+  utter_anonym_class_doubt:
+  - text: |-
+      Le classi anonime non sono limitate solo ai metodi. 
+      Ecco un esempio con diversi casi:
+      ```public class AnonymousExamples {
+      	interface Iface { 
+      		void im(); 
+      	} 
+      	Iface maic = new Iface() {
+      		public void im() { }
+      	}; 
+
+      	static Iface manc = new Iface() {
+      		public void im() { } 
+      	}; 
+      	public static void main(String[] args) { 
+      		 Iface alnc = new Iface() {
+      			 public void im() { }
+      		};
+      		} 
+      t public void m() { 
+      		Iface alic = new Iface() {
+      			public void im() { } 
+      		}; 
+      		}
+      }```
+  utter_equals_doubt:
+  - text: Dipende dal tipo di errore che hai, se hai un `NullPointerException` probabilmente manca l'inizializzazione degli attributi nel costruttore. Prova ad inizializzare gli attributi.
+  utter_arraysort_pattern_doubt:
+  - text: No. Un pattern è una struttura complessa, quello è semplicemente un metodo. In generale il problema a cui risponde un pattern non è un'esigenza funzionale ma un'esigenza di organizzazione del codice (design).
+  utter_charAt_doubt:
+  - text: |-
+      Il metodo `charAt()` è definito nella classe `String` e restituisce il carattere all'indice specificato.
+      `hex.apply(10)`: si tratta di un errore nelle slide, dovrebbe essere corretto nella versione delle slide online.
+  utter_class_general_doubt:
+  - text: Il vantaggio è proprio dato dal non dover scrivere tante varianti che sono riassunti in un’unica classe o metodo. la classe é unica, mentre il tipo di dato manipolato viene definito quando creiamo un nuovo elemento in modo da averne diversi con gli stessi metodi.
+  utter_referent_methods_doubt:
+  - text: il compilatore non ha modo di sapere quale metodo utilizzare, l'unica cosa che può fare è verificare che nella class `Object` esista quel metodo. Il meccanismo di _*dynamic binding*_ viene messo in atto dalla JVM in fase di esecuzione, cioè quando è possibile sapere il tipo reale dell'oggetto puntato dall'`elemento`
+  utter_comparing_doubt:
+  - text: La documentazione completa la trovi a questo link <https://oop.polito.it/api/java/util/Comparator.html|https://oop.polito.it/api/java/util/Comparator.html>. Il metodo comparing() è definito come statico e infatti (salvo import static) viene invocato come Comparator.comparing( ... )
+  utter_difference_dynamic_bind_upcast:
+  - text: |-
+      I due concetti sono legati, ma, in sintesi
+      -il dynamic binding è una procedura attuata dalla VM al momento di fare una chiamata
+      -l'up-cast è una direttiva che il programmatore da al compilatore
+      In generale anche se viene effettuato un up-cast in fase si esecuzione la JVM applica comunque il dynamic binding e parte dalla classe effettiva dell'oggetto e non da quella del riferimento (modificata dall'up cast)
+  utter_functional_interface:
+  - text: |-
+      Le interaccie funzionali sono interfaccie che contengono solo un metodo regolare, oltre ad eventuali metodi statici o di default.
+      I metodi sono puramente funzionali (il risultato dei metodi è basato solamente agli argomenti che vengono passati).In Java esistono alcune interfacce funzionali definite in `java.util.function`, le principali sono: `Consumer`, `Supplier`, `Predicate`, `Function` e `BiFunction`.
+  utter_default_methods:
+  - text: |-
+      La keyword `default` è spesso usata nelle interfacce e applicata ai metodi.
+      Questi metodi otterranno le seguenti caratteristiche:
+      - possono riferirsi ad argomenti e ad altri metodi;
+      - possono riferirsi a attributi non-static.
+      - possono essere sovrascritti in classi implementate come ogni metodo regolare.
+  utter_pattern:
+  - text: |-
+      Il pattern, o design pattern, è una descrizione, modello logico da applicare per risolvere un problema
+      che può presentarsi in diverse situazioni durante le fasi di progettazione e sviluppo
+      del software, ancor prima della definizione del programma in sé e quindi della sua soluzione algoritmica.
+  utter_static_methods:
+  - text: |-
+      La keyword static è spesso usata nelle interfacce e applicata ai metodi.
+      Questi metodi avranno quindi le seguenti caratteristiche:
+      - non possono riferirsi a metodi di istanza.
+      - non possono cambiare gli attributi static.
+      - possono riferirsi ai loro argomenti.
+      - possono essere sovrascritti.
+  utter_final:
+  - text: |-
+      La keyword `final` può essere usato negli attributi o metodi di una classe.
+      - negli attributi, significa che il contenuto della variabile non potrà più cambiare (diventerà quindi una costante);
+      - nei metodi, gli rende non sovrascrivibili da una sottoclasse.
+  utter_this:
+  - text: |-
+      Il `this` rappresenta un riferimento alla classe stessa (oggetto corrente) ed è usato per richiamare metodi o attributi all'interno della stessa classe.
+  utter_instanceof:
+  - text: |-
+      L'operatore `instanceof` permette di capire se una dato oggetto puntato per riferimento può essere castato un una certa classe oppure no.
+      Se per esempio abbiamo le classi `CEO, Manager e Employee`. con un albero di gerarchie del tipo: `Employee (root) -> Manager (CHILD) -> CEO (CHILD OF CHILD)`.
+      un oggetto con riferimento `CEO` può essere istanza sia della classe `Employee` che di `Manager`, oltre che alla sua classe stessa, perchè è sottoclasse (eredita) delle due classi precedenti.
+      Al contrario un oggetto di tipo `Employee` (classe super) non potrà essere istanza di classe `CEO` (perchè sta sopra l'albero di gerarchia ereditaria).
+      Esempio:
+      `aEmployee isntanceof CEO`? -> False
+      `aManager isntanceof Employee`? -> True
+  utter_terminology:
+  - text: |-
+      - classe ereditata:   Super classe, classe parent, classe padre. classe Base, classe Antenata.
+      - classe che eredita:   classe figlio, child class, sottoclasse, classe discendente.
+  utter_hineritance_tree:
+  - text: |-
+      L'albero dell'ereditarietà permette di capire la struttura ("l'albero genealogico") e il comportamento di una classe,
+      fornendo tutte le sue classi antenate (da cui ha ereditato metodi e/o attributi).
+      Di solito il DIT (il numero di livelli dell'albero) è minore o uguale a 5.
+      Esempio: `Specie viventi (ROOT) ->  Animali (CHILD1) -> Mammiferi (CHILD1 of CHILD1)`
+               `Specie viventi (ROOT) ->  Vegetali (CHILD2)`
+  utter_hineritance_advantages:
+  - text: |-
+      I suoi vantaggi sono:
+      - `il riuso`: se una classe è molto simile ad un altra, si evita di riscrive del codice e lo localizza, cioè se risolvo un bug/aggiungo una funzionalità nella classe base automaticamente lo risolvo/aggiungo la funzionalità anche nella classe derivata;
+      - `la flessibilità`: possiamo trattare oggetti di differenti classi in maniera simile usando il polimorfismo e il Dynamic binding;
+       -  permette di `generalizzare` una classe e di specializzarne altre partendo da quelle generiche, formando un albero dell'ereditarietà.
+  utter_interface_advantages:
+  - text: |-
+      I vantaggi principali delle interfacce sono:
+      - permette di definire `implementazioni alternative` partendo da, appunto, una interfaccia comune; 
+      - posso usare due (o più) classi diverse in modo trasparente (senza dover sapere quale si usa in ogni caso);
+      - permette di implementare in maniera specifica `comportamenti comuni`: per esempio, quando confronto due oggetti dipende dal loro tipo per scegliere come effettuarlo. Quindi le interfacce definiscono i metodi comuni e le classi che le implementano permettono la `parametrizzazione` dei vari algoritmi; 
+      - abilita il `disaccoppiamento della comunicazione`: separa mittente e destinatario, usando delle callback definite; 
+      - permette il `class flagging` (contrassegno delle classi), usato quando un set di classi devono essere trattate similarmente ma un loro subset deve essere trattato in modo differente. L'interfaccia in questo caso è definita senza metodi e attributi (vuota), come se fosse appunto un flag.
+  utter_factory_methods:
+  - text: |
+      I factory methods hanno diversi vantaggi sui costruttori:
+      - permettono di controllare meglio il numero di oggetti creati, ad esempio realizzando un Singleton (classe per cui viene istanziato un unico oggetto)
+      - evitare di creare oggetti se ne esistono già di uguali (pooling, come ad esempio il metodo `Integer.valueOf`
+      - possono creare oggetti diversi (sottoclassi del tipo di ritorno) in funzione dei parametri o di altre informazioni'
+actions:
+- action_send_help
+- action_answer
+forms:
+  question_form:
+    required_slots:
+       question:
+         - type: from_text
+e2e_actions: []

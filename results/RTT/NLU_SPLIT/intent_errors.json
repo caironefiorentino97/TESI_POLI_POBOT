@@ -1,0 +1,34 @@
+[
+  {
+    "text": "hey",
+    "intent": "greet",
+    "intent_prediction": {
+      "name": "affirm",
+      "confidence": 0.14717388153076172
+    }
+  },
+  {
+    "text": "a dopo",
+    "intent": "goodbye",
+    "intent_prediction": {
+      "name": "deny",
+      "confidence": 0.1503985971212387
+    }
+  },
+  {
+    "text": "a cosa serve il super nei costruttori",
+    "intent": "super",
+    "intent_prediction": {
+      "name": "hineritance_constructor",
+      "confidence": 0.18397273123264313
+    }
+  },
+  {
+    "text": "yep",
+    "intent": "affirm",
+    "intent_prediction": {
+      "name": "deny",
+      "confidence": 0.12941519916057587
+    }
+  }
+]

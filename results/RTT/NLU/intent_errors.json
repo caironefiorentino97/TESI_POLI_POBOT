@@ -1,0 +1,42 @@
+[
+  {
+    "text": "buonasera",
+    "intent": "goodday",
+    "intent_prediction": {
+      "name": "greet",
+      "confidence": 0.12217418104410172
+    }
+  },
+  {
+    "text": "mi spegheresti l'utilizzo dei costruttori nell'ereditarietà",
+    "intent": "hineritance_constructor",
+    "intent_prediction": {
+      "name": "hineritance_tree",
+      "confidence": 0.14244240522384644
+    }
+  },
+  {
+    "text": "non mi è ancora chiaro come agiscono i modificatori final e static sui metodi",
+    "intent": "static_final_doubt",
+    "intent_prediction": {
+      "name": "static_methods",
+      "confidence": 0.12390752881765366
+    }
+  },
+  {
+    "text": "parlami del casting",
+    "intent": "casting",
+    "intent_prediction": {
+      "name": "upcasting",
+      "confidence": 0.11316768079996109
+    }
+  },
+  {
+    "text": "ovvio",
+    "intent": "affirm",
+    "intent_prediction": {
+      "name": "greet",
+      "confidence": 0.11967650055885315
+    }
+  }
+]

@@ -1,0 +1,10 @@
+[
+  {
+    "text": "mi parleresti dell'interfaccia comparable",
+    "intent": "comparable",
+    "intent_prediction": {
+      "name": "interface",
+      "confidence": 0.490842342376709
+    }
+  }
+]

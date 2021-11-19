@@ -1,0 +1,74 @@
+[
+  {
+    "text": "concordo",
+    "intent": "affirm",
+    "intent_prediction": {
+      "name": "ask_prof",
+      "confidence": 0.6967636346817017
+    }
+  },
+  {
+    "text": "ok",
+    "intent": "affirm",
+    "intent_prediction": {
+      "name": "dynamic_binding",
+      "confidence": 0.2895764112472534
+    }
+  },
+  {
+    "text": "descrivimi l'iterator",
+    "intent": "iterator_iterable",
+    "intent_prediction": {
+      "name": "hineritance",
+      "confidence": 0.5687026381492615
+    }
+  },
+  {
+    "text": "yep",
+    "intent": "affirm",
+    "intent_prediction": {
+      "name": "iterator_iterable",
+      "confidence": 0.3289926052093506
+    }
+  },
+  {
+    "text": "definiscimi la sovrascrittura dei metodi",
+    "intent": "override",
+    "intent_prediction": {
+      "name": "casting",
+      "confidence": 0.3374994993209839
+    }
+  },
+  {
+    "text": "mi parleresti dell'interfaccia comparable",
+    "intent": "comparable",
+    "intent_prediction": {
+      "name": "interface",
+      "confidence": 0.7086431980133057
+    }
+  },
+  {
+    "text": "quali sono i metodi di iterator",
+    "intent": "iterator_iterable",
+    "intent_prediction": {
+      "name": "static_methods",
+      "confidence": 0.367173969745636
+    }
+  },
+  {
+    "text": "si",
+    "intent": "affirm",
+    "intent_prediction": {
+      "name": "interface",
+      "confidence": 0.25001609325408936
+    }
+  },
+  {
+    "text": "certo",
+    "intent": "affirm",
+    "intent_prediction": {
+      "name": "hineritance",
+      "confidence": 0.262195885181427
+    }
+  }
+]

@@ -1,0 +1,42 @@
+[
+  {
+    "text": "hey",
+    "intent": "greet",
+    "intent_prediction": {
+      "name": "dynamic_binding",
+      "confidence": 0.11765529960393906
+    }
+  },
+  {
+    "text": "a cosa serve il super nei costruttori",
+    "intent": "super",
+    "intent_prediction": {
+      "name": "hineritance_constructor",
+      "confidence": 0.13957002758979797
+    }
+  },
+  {
+    "text": "descrivimi il comparator",
+    "intent": "comparator",
+    "intent_prediction": {
+      "name": "comparable",
+      "confidence": 0.14972586929798126
+    }
+  },
+  {
+    "text": "cosa è un default method",
+    "intent": "default_methods",
+    "intent_prediction": {
+      "name": "dynamic_binding",
+      "confidence": 0.13815860450267792
+    }
+  },
+  {
+    "text": "yep",
+    "intent": "affirm",
+    "intent_prediction": {
+      "name": "deny",
+      "confidence": 0.16779731214046478
+    }
+  }
+]

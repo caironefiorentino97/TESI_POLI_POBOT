@@ -1,0 +1,859 @@
+version: "2.0"
+stories:
+- story: PO hineritance with advantages
+  steps:
+  - user: |
+      mi diresti cosa è l'ereditarietà?
+    intent: hineritance
+  - action: utter_hineritance
+  - user: |
+      quali sono i suoi vantaggi?
+    intent: advantages
+  - action: utter_hineritance_advantages
+  - action: utter_doubt
+  - checkpoint: check_doubt
+
+- story: PO override
+  steps:
+  - user: |
+      mi parleresti della sovrascrittura dei metodi?
+    intent: override
+  - action: utter_override
+  - action: utter_doubt
+  - checkpoint: check_doubt
+
+- story: PO polymorphism
+  steps:
+  - user: |
+      Che cosa si intende per polimorfismo?
+    intent: polymorphism
+  - action: utter_polymorphism
+  - action: utter_doubt
+  - checkpoint: check_doubt
+
+- story: PO dynamic binding
+  steps:
+  - user: |
+      Mi racconteresti come funziona il dynamic binding?
+    intent: dynamic_binding
+  - action: utter_dynamic_binding
+  - action: utter_doubt
+  - checkpoint: check_doubt
+
+- story: PO casting
+  steps:
+  - user: |
+      Come funziona il casting in Java?
+    intent: casting
+  - action: utter_casting
+  - action: utter_doubt
+  - checkpoint: check_doubt
+
+- story: PO upcasting
+  steps:
+  - user: |
+      Cosa è l'upcasting?
+    intent: upcasting
+  - action: utter_upcasting
+  - action: utter_doubt
+  - checkpoint: check_doubt
+
+- story: PO downcasting
+  steps:
+  - user: |
+      Quando è lecito il downcasting?
+    intent: downcasting
+  - action: utter_downcasting
+  - action: utter_doubt
+  - checkpoint: check_doubt
+
+- story: PO visibility
+  steps:
+  - user: |
+      Quale è la differenza tra il livello di visibilità public e package?
+    intent: visibility
+  - action: utter_visibility
+  - action: utter_doubt
+  - checkpoint: check_doubt
+
+- story: PO hineritance constructor
+  steps:
+  - user: |
+      Come si scrivono i costruttori ereditati?
+    intent: hineritance_constructor
+  - action: utter_hineritance_constructor
+  - action: utter_doubt
+  - checkpoint: check_doubt
+
+- story: PO method super
+  steps:
+  - user: |
+      Come si usa l'operatore super?
+    intent: super
+  - action: utter_super
+  - action: utter_doubt
+  - checkpoint: check_doubt
+
+- story: PO class object
+  steps:
+  - user: |
+      Mi parleresti della classe Object?
+    intent: class_object
+  - action: utter_class_object
+  - action: utter_doubt
+  - checkpoint: check_doubt
+
+- story: PO abstract class
+  steps:
+  - user: |
+      Mi diresti come si scrive una classe astratta?
+    intent: class_abstract
+  - action: utter_class_abstract
+  - action: utter_doubt
+  - checkpoint: check_doubt
+
+- story: PO comparator1
+  steps:
+  - user: |
+       Invece non ho capito bene questo blocco di codice: (as1 è un array di Student)\n\nArrays.sort(as1, new Comparator() {   //Uso di una classe anonima\n\t\t\t\n\t\t\tpublic int compare(Object a, Object b) {//è un Override\n\t\t\t\tStudent sa = (Student) a;\n\t\t\t\tStudent sb = (Student) b;\n\t\t\t\t\n\t\t\t\treturn sa.getName().compareTo(sb.getName());\n\t\t\t}\n\t\t});\n\nNon riesco a capire bene il meccanismo che ci sta dietro. A quanto ho capito, java.util.Arrays implementa varie versioni di sort, con signature diverse. Una di queste prevede un array e un comparatore (come abbiamo fatto con StudentComparatorIdCresc/Desc).\nCostruiamo quindi il comparatore sul momento, facendo l'Override di 'compare()' rispetto a java.util.Comparator. Anche compareTo() ha varie signature possibili, una delle quali con le stringhe, come quella che usiamo, che quindi confronta le due stringhe ordinandole.\n\nE' un ragionamento corretto?
+    intent: comparator
+  - action: utter_comparator
+  - action: utter_doubt
+  - checkpoint: check_doubt
+
+- story: PO comparable
+  steps:
+  - user: |
+       Parlami del comparable, per piacere.
+    intent: comparable
+  - action: utter_comparable
+  - action: utter_doubt
+  - checkpoint: check_doubt
+
+- story: PO comparator2
+  steps:
+  - user: |
+      Nell'esempio:\n\n```Arrays.sort (s, (s1,s2) -&gt; {\n\t\t\tStudent ss1 = (Student) s1;\n\t\t\tStudent ss2 = (Student) s2;\n\t\t\treturn (ss1.getLastName().compareTo(ss2.getLastName())); \n\t\t}     );\nfor (Student ps: s) {\n\tSystem.out.println (ps);\n}```\ncosa sono s1, s2, o meglio come fanno a prendere i valori s[0], s[1] ecc e che relazione c'è con `Comparator`\n\ncioè io ho capito che scrivendo questo in pratica dico a `sort` come gestire `Comparator`, però non ho capito come fa a capirlo che io voglio fare l'override proprio di quello?
+    intent: comparator
+  - action: utter_comparator
+  - action: utter_doubt
+  - checkpoint: check_doubt
+
+- story: PO iterator iterable
+  steps:
+  - user: |
+      Mi diresti cosa è un Iterator?
+    intent: iterator_iterable
+  - action: utter_iterator_iterable
+  - action: utter_doubt
+  - checkpoint: check_doubt
+
+- story: PO observer observable
+  steps:
+  - user: |
+      Come si implementa un Observer?
+    intent: observer_observable
+  - action: utter_observer_observable
+  - action: utter_doubt
+  - checkpoint: check_doubt
+
+- story: PO lambda
+  steps:
+  - user: |
+      Come si scrive una funzione lambda e quali sono le sue caratteristiche?
+    intent: lambda
+  - action: utter_anonymous_class
+  - action: utter_lambda
+  - action: utter_doubt
+  - checkpoint: check_doubt
+
+- story: PO method reference
+  steps:
+  - user: |
+      Cosa è un method reference?
+    intent: method_reference
+  - action: utter_method_reference
+  - action: utter_doubt
+  - checkpoint: check_doubt
+
+- story: PO class object doubt
+  steps:
+  - user: |
+      ho un dubbio non capisco come il metodo equals() riesca a confrontare un oggetto con un altro dato che aprendo la classe object tale metodo è vuoto
+    intent: object_methods_doubt
+  - action: utter_object_methods_doubt
+  - action: utter_doubt
+  - checkpoint: check_doubt
+
+- story: PO static
+  steps:
+  - user: |
+      Non mi è ancora chiaro come agiscono i keyword final e static sui metodi.
+    intent: static_final_doubt
+  - action: utter_static_final_doubt
+  - action: utter_doubt
+  - checkpoint: check_doubt
+
+- story: PO variable main
+  steps:
+  - user: |
+      come mai se dichiaro una variabile di tipo public nel main mi dà un errore?
+    intent: visibility_variables_main
+  - action: utter_visibility_variables_main
+  - action: utter_doubt
+  - checkpoint: check_doubt
+
+- story: PO anonym_class_doubt
+  steps:
+  - user: |
+      Perchè l'operazione di new nella creazione di una classe anonima si può fare solo all'interno di un metodo?
+    intent: anonym_class_doubt
+  - action: utter_anonym_class_doubt
+  - action: utter_doubt
+  - checkpoint: check_doubt
+
+- story: PO method equals_doubt
+  steps:
+  - user: |
+      perchè se scrivo nel mio programma il metodo uguali non funziona se uso equals a cosa può essere dovuto l'errore?
+    intent: equals_doubt
+  - action: utter_equals_doubt
+  - action: utter_doubt
+  - checkpoint: check_doubt
+
+- story: PO arraysort_pattern_doubt
+  steps:
+  - user: |
+      volevo capire se il metodo arrays.sort è un pattern dato che fornisce una soluzione a un problema ricorrente (cioè l'ordinamento di una lista di dati)
+    intent: arraysort_pattern_doubt
+  - action: utter_arraysort_pattern_doubt
+  - action: utter_doubt
+  - checkpoint: check_doubt
+
+- story: PO charAt_doubt
+  steps:
+  - user: |
+      nelle lambda functions e method references quando fa l'esempio dell'implementazione dell'interfaccia il metodo charAt dove è definito?
+    intent: charAt_doubt
+  - action: utter_charAt_doubt
+  - action: utter_doubt
+  - checkpoint: check_doubt
+
+- story: PO class_general_doubt
+  steps:
+  - user: |
+      le general non perdono l'elasticità del tipo object? Il loro scopo é di permettere di cambiare più facilmente il tipo di dato manipolato dai suoi metodi senza intervenire sulla definizione di ogni singolo metodo?
+    intent: class_general_doubt
+  - action: utter_class_general_doubt
+  - action: utter_doubt
+  - checkpoint: check_doubt
+
+- story: PO referent_methods_doubt
+  steps:
+  - user: |
+      come fa il compilatore a sapere se usare il metodo object originale o quello sovrascritto?
+    intent: referent_methods_doubt
+  - action: utter_referent_methods_doubt
+  - action: utter_doubt
+  - checkpoint: check_doubt
+
+- story: PO comparing_doubt
+  steps:
+  - user: |
+      mi diresti dove si trova il comparing dell'interfaccia comparator?
+    intent: comparing_doubt
+  - action: utter_comparing_doubt
+  - action: utter_doubt
+  - checkpoint: check_doubt
+
+- story: PO difference_dynamic_bind_upcast
+  steps:
+  - user: |
+      Mi sono sorti dei dubbi ripassando dynamic binding e upcast in particolare non mi è chiara la differenza tra le due me le puoi rispiegare?
+    intent: difference_dynamic_bind_upcast
+  - action: utter_difference_dynamic_bind_upcast
+  - action: utter_doubt
+  - checkpoint: check_doubt
+
+- story: affirm
+  steps:
+  - checkpoint: check_doubt
+  - user: |
+      si
+    intent: affirm
+  - action: utter_affirm
+
+- story: deny
+  steps:
+  - checkpoint: check_doubt
+  - user: |
+      No!
+    intent: deny
+  - action: utter_sorry
+  - action: utter_deny
+
+- story: functional_interface
+  steps:
+  - user: |
+      Cosa sono le interfacce funzionali?
+    intent: functional_interface
+  - action: utter_functional_interface
+  - action: utter_doubt
+  - checkpoint: check_doubt
+
+- story: default_methods
+  steps:
+  - user: |
+      Qaali sono le caratteristiche dei defaults methods?
+    intent: default_methods
+  - action: utter_default_methods
+  - action: utter_doubt
+  - checkpoint: check_doubt
+
+- story: static_methods
+  steps:
+  - user: |
+      Qaali sono le caratteristiche dei static methods?
+    intent: static_methods
+  - action: utter_static_methods
+  - action: utter_doubt
+  - checkpoint: check_doubt
+
+- story: final
+  steps:
+  - user: |
+      Mi parleresti della keyword final in Java?
+    intent: final
+  - action: utter_final
+  - action: utter_doubt
+  - checkpoint: check_doubt
+
+- story: this
+  steps:
+  - user: |
+      Cosa è la keyword this e come viene usata in Java?
+    intent: this
+  - action: utter_this
+  - action: utter_doubt
+  - checkpoint: check_doubt
+
+- story: instanceof
+  steps:
+  - user: |
+      Come viene usato l'operatore instanceof?
+    intent: instanceof
+  - action: utter_instanceof
+  - action: utter_doubt
+  - checkpoint: check_doubt
+
+- story: terminology
+  steps:
+  - user: |
+      Mi forniresti un elenco di terminologie corrette usate nell'ambito ereditario?
+    intent: terminology
+  - action: utter_terminology
+  - action: utter_doubt
+  - checkpoint: check_doubt
+
+- story: hineritance_tree
+  steps:
+  - user: |
+      Cosa è l'albero gerarchico dell'ereditarietà?
+    intent: hineritance_tree
+  - action: utter_hineritance_tree
+  - action: utter_doubt
+  - checkpoint: check_doubt
+
+- story: PO interface with advantages
+  steps:
+  - user: |
+      Cosa è una interfaccia?
+    intent: interface
+  - action: utter_interface
+  - user: |
+      Quali sono i suoi principali vantaggi?
+    intent: advantages
+  - action: utter_interface_advantages
+  - action: utter_doubt
+  - checkpoint: check_doubt
+
+- story: PO anonymous_class
+  steps:
+  - user: |
+      Come si scrive una classe anonima?
+    intent: anonymous_class
+  - action: utter_anonymous_class
+  - action: utter_doubt
+  - checkpoint: check_doubt
+
+- story: factory methods
+  steps:
+  - user: |
+      Innanzitutto non capisco benissimo il vantaggio dell'utilizzo dei Factory Methods nelle interfacce rispetto ad usare un costruttore, è più una curiosità che altro.
+    intent: factory_methods
+  - action: utter_factory_methods
+  - action: utter_doubt
+  - checkpoint: check_doubt
+
+- story: Say hi anytime the user says hi
+  steps:
+  - user: |
+      Hey!
+    intent: greet
+  - action: utter_greet
+
+- story: Say hi anytime the user says hi 2
+  steps:
+  - user: |
+      Buongiorno!
+    intent: goodday
+  - action: utter_goodday
+
+- story: Say goodbye anytime the user says goodbye
+  steps:
+  - user: |
+      Arrivederci!
+    intent: goodbye
+  - action: utter_goodbye
+
+- story: Say 'I am a bot' anytime the user challenges
+  steps:
+  - user: |
+      Chi sei?
+    intent: bot
+  - action: utter_bot
+
+- story: thanks at bot
+  steps:
+  - user: |
+      Grazie!
+    intent: thanks
+  - action: utter_thanks
+
+- story: ask where slides
+  steps:
+  - user: |
+      è possibile avere o reperire da qualche parte le slide che usa nelle lezioni asincrone, perchè in quelle scaricabili dal portale mancano diverse slide/esempi
+    intent: slides
+  - action: utter_slides
+
+- story: ask graphics
+  steps:
+  - user: |
+      mi chiedevo se come avveniva per C tratteremo solamente programmi eseguibili in terminale o inizieremo a creare programmi anche con interfacce grafiche?
+    intent: GUI
+  - action: utter_GUI
+
+- story: ask eclipse frize
+  steps:
+  - user: |
+      Ho uno stano errore in Eclipse, non capisco cosa è...
+    intent: eclipse
+  - action: utter_eclipse
+
+- story: PO hineritance with advantages
+  steps:
+  - user: |
+      mi parleresti per piacere dell'ereditarietà?
+    intent: hineritance
+  - action: utter_hineritance
+  - user: |
+      quali sono i suoi vantaggi principali?
+    intent: advantages
+  - action: utter_hineritance_advantages
+  - action: utter_doubt
+  - checkpoint: check_doubt
+
+- story: PO override
+  steps:
+  - user: |
+      mi diresti qualcosa dell'override?
+    intent: override
+  - action: utter_override
+  - action: utter_doubt
+  - checkpoint: check_doubt
+
+- story: PO polymorphism
+  steps:
+  - user: |
+      Che cosa è il polimorfismo?
+    intent: polymorphism
+  - action: utter_polymorphism
+  - action: utter_doubt
+  - checkpoint: check_doubt
+
+- story: PO dynamic binding
+  steps:
+  - user: |
+      Mi parleresti di come funziona il dynamic binding?
+    intent: dynamic_binding
+  - action: utter_dynamic_binding
+  - action: utter_doubt
+  - checkpoint: check_doubt
+
+- story: PO casting
+  steps:
+  - user: |
+      Cosa serve il casting?
+    intent: casting
+  - action: utter_casting
+  - action: utter_doubt
+  - checkpoint: check_doubt
+
+- story: PO upcasting
+  steps:
+  - user: |
+      Come funziona l'upcasting in Java?
+    intent: upcasting
+  - action: utter_upcasting
+  - action: utter_doubt
+  - checkpoint: check_doubt
+
+- story: PO downcasting
+  steps:
+  - user: |
+      Quando si usa il downcast in Java?
+    intent: downcasting
+  - action: utter_downcasting
+  - action: utter_doubt
+  - checkpoint: check_doubt
+
+- story: PO visibility
+  steps:
+  - user: |
+      Quale è la differenza tra il livello di visibilità private e protected?
+    intent: visibility
+  - action: utter_visibility
+  - action: utter_doubt
+  - checkpoint: check_doubt
+
+- story: PO hineritance constructor
+  steps:
+  - user: |
+      Come si scrivono i costruttori derivati?
+    intent: hineritance_constructor
+  - action: utter_hineritance_constructor
+  - action: utter_doubt
+  - checkpoint: check_doubt
+
+- story: PO method super
+  steps:
+  - user: |
+      Parlami dell'operatore super.
+    intent: super
+  - action: utter_super
+  - action: utter_doubt
+  - checkpoint: check_doubt
+
+- story: PO class object
+  steps:
+  - user: |
+      Mi racconteresti qualcosa della classe Object?
+    intent: class_object
+  - action: utter_class_object
+  - action: utter_doubt
+  - checkpoint: check_doubt
+
+- story: PO abstract class
+  steps:
+  - user: |
+      Come si scrive una classe astratta?
+    intent: class_abstract
+  - action: utter_class_abstract
+  - action: utter_doubt
+  - checkpoint: check_doubt
+
+- story: PO comparable
+  steps:
+  - user: |
+      Parlami dell'interfaccia comparable.
+    intent: comparable
+  - action: utter_comparable
+  - action: utter_doubt
+  - checkpoint: check_doubt
+
+- story: PO iterator iterable
+  steps:
+  - user: |
+      Mi racconteresti qualcosa dell'Iterable?
+    intent: iterator_iterable
+  - action: utter_iterator_iterable
+  - action: utter_doubt
+  - checkpoint: check_doubt
+
+- story: PO observer observable
+  steps:
+  - user: |
+      Parlami dell'nterfaccia Observable e del suo utilizzo con Observer.
+    intent: observer_observable
+  - action: utter_observer_observable
+  - action: utter_doubt
+  - checkpoint: check_doubt
+
+- story: PO lambda
+  steps:
+  - user: |
+      Come si implementa una funzione lambda in Java?
+    intent: lambda
+  - action: utter_anonymous_class
+  - action: utter_lambda
+  - action: utter_doubt
+  - checkpoint: check_doubt
+
+- story: PO method reference
+  steps:
+  - user: |
+      Mi diresti qualcosa sui method reference?
+    intent: method_reference
+  - action: utter_method_reference
+  - action: utter_doubt
+  - checkpoint: check_doubt
+
+- story: PO class object doubt
+  steps:
+  - user: |
+      Ho un dubbio non capisco come il metodo .equals() riesca a confrontare un oggetto con un altro dato che aprendo la classe Object non compare nessun contenuto.
+    intent: object_methods_doubt
+  - action: utter_object_methods_doubt
+  - action: utter_doubt
+  - checkpoint: check_doubt
+
+- story: PO static
+  steps:
+  - user: |
+      Mi diresti come agiscono final e static sui metodi.
+    intent: static_final_doubt
+  - action: utter_static_final_doubt
+  - action: utter_doubt
+  - checkpoint: check_doubt
+
+- story: PO variable main
+  steps:
+  - user: |
+      Come mai se dichiaro una variabile di tipo public nel main mi ritorna un errore?
+    intent: visibility_variables_main
+  - action: utter_visibility_variables_main
+  - action: utter_doubt
+  - checkpoint: check_doubt
+
+- story: PO method equals_doubt
+  steps:
+  - user: |
+      Non capisco perchè se scrivo nel programma fatto a lezione il metodo uguali non funziona se uso equals?
+    intent: equals_doubt
+  - action: utter_equals_doubt
+  - action: utter_doubt
+  - checkpoint: check_doubt
+
+- story: PO arraysort_pattern_doubt
+  steps:
+  - user: |
+      Il metodo arrays.sort è un pattern dato che fornisce una soluzione a un problema ricorrente?
+    intent: arraysort_pattern_doubt
+  - action: utter_arraysort_pattern_doubt
+  - action: utter_doubt
+  - checkpoint: check_doubt
+
+- story: PO charAt_doubt
+  steps:
+  - user: |
+      Nelle lambda functions e method references, il metodo charAt dove è definito nell'esempio visto a lezione?
+    intent: charAt_doubt
+  - action: utter_charAt_doubt
+  - action: utter_doubt
+  - checkpoint: check_doubt
+
+- story: PO class_general_doubt
+  steps:
+  - user: |
+      Le General non perdono l'elasticità del tipo object?
+    intent: class_general_doubt
+  - action: utter_class_general_doubt
+  - action: utter_doubt
+  - checkpoint: check_doubt
+
+- story: PO referent_methods_doubt
+  steps:
+  - user: |
+      Come fa il compilatore a sapere se usare il metodo della classe Object originale o quello sovrascritto?
+    intent: referent_methods_doubt
+  - action: utter_referent_methods_doubt
+  - action: utter_doubt
+  - checkpoint: check_doubt
+
+- story: PO comparing_doubt
+  steps:
+  - user: |
+      Mi diresti dove si trova il metodo comparing dell'interfaccia Comparator?
+    intent: comparing_doubt
+  - action: utter_comparing_doubt
+  - action: utter_doubt
+  - checkpoint: check_doubt
+
+- story: PO difference_dynamic_bind_upcast
+  steps:
+  - user: |
+      Non mi è chiara la differenza tra dynamic binding e upcasting me le puoi rispiegare?
+    intent: difference_dynamic_bind_upcast
+  - action: utter_difference_dynamic_bind_upcast
+  - action: utter_doubt
+  - checkpoint: check_doubt
+
+- story: functional_interface
+  steps:
+  - user: |
+      Dimmi cosa sono le interfacce funzionali?
+    intent: functional_interface
+  - action: utter_functional_interface
+  - action: utter_doubt
+  - checkpoint: check_doubt
+
+- story: default_methods
+  steps:
+  - user: |
+      Quali sono le proprietà dei defaults methods?
+    intent: default_methods
+  - action: utter_default_methods
+  - action: utter_doubt
+  - checkpoint: check_doubt
+
+- story: static_methods
+  steps:
+  - user: |
+      Cosa sono gli static methods?
+    intent: static_methods
+  - action: utter_static_methods
+  - action: utter_doubt
+  - checkpoint: check_doubt
+
+- story: final
+  steps:
+  - user: |
+      Cosa serve un attributo final in Java?
+    intent: final
+  - action: utter_final
+  - action: utter_doubt
+  - checkpoint: check_doubt
+
+- story: this
+  steps:
+  - user: |
+      Cosa serve la keyword this?
+    intent: this
+  - action: utter_this
+  - action: utter_doubt
+  - checkpoint: check_doubt
+
+- story: instanceof
+  steps:
+  - user: |
+      Cosa è l'operatore instanceof?
+    intent: instanceof
+  - action: utter_instanceof
+  - action: utter_doubt
+  - checkpoint: check_doubt
+
+- story: terminology
+  steps:
+  - user: |
+      Mi forniresti un elenco di terminologie corrette usate nell'ambito dell'ereditarietà?
+    intent: terminology
+  - action: utter_terminology
+  - action: utter_doubt
+  - checkpoint: check_doubt
+
+- story: hineritance_tree
+  steps:
+  - user: |
+      Mi faresti un esempio di albero gerarchico dell'ereditarietà
+    intent: hineritance_tree
+  - action: utter_hineritance_tree
+  - action: utter_doubt
+  - checkpoint: check_doubt
+
+- story: PO interface with advantages
+  steps:
+  - user: |
+      Mi diresti cosa è una interfaccia?
+    intent: interface
+  - action: utter_interface
+  - user: |
+      Quali sono i suoi vantaggi?
+    intent: advantages
+  - action: utter_interface_advantages
+  - action: utter_doubt
+  - checkpoint: check_doubt
+
+- story: PO anonymous_class
+  steps:
+  - user: |
+      Cosa è una classe anonima?
+    intent: anonymous_class
+  - action: utter_anonymous_class
+  - action: utter_doubt
+  - checkpoint: check_doubt
+
+- story: factory methods
+  steps:
+  - user: |
+      Non capisco il vantaggio dell'utilizzo dei Factory Methods nelle interfacce rispetto ad usare un costruttore.
+    intent: factory_methods
+  - action: utter_factory_methods
+  - action: utter_doubt
+  - checkpoint: check_doubt
+
+- story: Say hi anytime the user says hi
+  steps:
+  - user: |
+      Ciao!
+    intent: greet
+  - action: utter_greet
+
+- story: Say hi anytime the user says hi 2
+  steps:
+  - user: |
+      Buonasera
+    intent: goodday
+  - action: utter_goodday
+
+- story: Say goodbye anytime the user says goodbye
+  steps:
+  - user: |
+      Ci vediamo!
+    intent: goodbye
+  - action: utter_goodbye
+
+- story: Say 'I am a bot' anytime the user challenges
+  steps:
+  - user: |
+      Cosa sei?
+    intent: bot
+  - action: utter_bot
+
+- story: thanks at bot
+  steps:
+  - user: |
+      Ti ringrazio!
+    intent: thanks
+  - action: utter_thanks
+
+- story: ask where slides
+  steps:
+  - user: |
+      Dove posso trovare le slide del corso?
+    intent: slides
+  - action: utter_slides
+
+- story: ask graphics
+  steps:
+  - user: |
+      Mi chiedevo se tratteremo solamente programmi eseguibili in terminale o inizieremo a creare programmi con GUI?
+    intent: GUI
+  - action: utter_GUI
+
+- story: ask eclipse frize
+  steps:
+  - user: |
+      Eclipse mi si è impallato, cosa posso fare?
+    intent: eclipse
+  - action: utter_eclipse

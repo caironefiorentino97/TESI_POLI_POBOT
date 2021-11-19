@@ -1,0 +1,348 @@
+version: "2.0"
+nlu:
+- intent: final
+  examples: |
+    - cosa è un metodo final
+    - cosa serve la keyword final
+    - cosa è un attributo final
+- intent: greet
+  examples: |
+    - saluti
+    - salve
+    - ciaooo
+    - ciao
+- intent: goodday
+  examples: |
+    - buongiornooo
+    - buonasera
+    - buonpomeriggio
+    - buona giornata
+- intent: goodbye
+  examples: |
+    - arrivederci
+    - alla prossima
+    - ci vediamo
+    - ci sentiamo
+- intent: deny
+  examples: |
+    - non ho capito
+    - non direi
+    - non proprio
+    - nop
+- intent: thanks
+  examples: |
+    - ti ringrazio molto
+    - grazie
+    - ti ringrazio
+    - infinitamente grazie
+- intent: bot
+  examples: |
+    - cosa sei
+    - sto parlando con un bot
+    - sei un bot
+    - cosa saresti tu
+- intent: GUI
+  examples: |
+    - tratteremo l'argomento delle gui in java
+    - mi chiedevo se come avveniva per C tratteremo solamente programmi eseguibili in terminale e file al massimo di tipo .txt oppure se inizieremo a creare programmi anche con interfacce grafiche o che trattano file di diverso tipo?
+    - tratteremo programmi con file testuali e csv in console oppure anche in ambiente visuale
+    - vedremo dei programmi in ambiente grafico GUI
+- intent: upcasting
+  examples: |
+    - a che cosa serve l'upcasting
+    - definisci cosa è upcasting
+    - descrivimi l'upcasting
+    - parlami del'upcasting
+- intent: visibility
+  examples: |
+    - quali sono le visibilità di un metodo
+    - quali sono i livelli di visibilità possibili di un attributo
+    - quali sono le visibilità di una classe o attributo
+    - quali sono le visibilità di un attributo
+- intent: hineritance_constructor
+  examples: |
+    - come si scrivono i costruttori di classi derivate
+    - come si scrivono i costruttori di classi ereditate
+    - mi spegheresti l'utilizzo dei costruttori nell'ereditarietà
+    - mi sapresti dire le regole per scrivere i costruttori ereditati
+- intent: super
+  examples: |
+    - come si usa la parola chiave super nelle classe derivate
+    - a cosa serve il super nei metodi
+    - mi spiegheresti come si usano la keyword  super
+    - come si usano le parole chiave  super
+- intent: class_object
+  examples: |
+    - mi racconti qualcosa sulla object
+    - mi spegheresti cosa è l'object
+    - che cosa è l'Object
+    - descrivimi l' object
+- intent: comparator
+  examples: |
+    - mi spiegheresti qualcosa sul comparator
+    - che cosa è il comparator
+    - quali sono i metodi di comparator
+    - quando si usa il comparator
+- intent: observer_observable
+  examples: |
+    - mi spiegheresti qualcosa sull'interfaccia observer
+    - che cosa è l'observable
+    - descrivimi l'interfaccia observer
+    - quale è la differenza tra observer e observable
+- intent: method_reference
+  examples: |
+    - parlami dei method reference
+    - come si scrive un method reference
+    - mi faresti un esempio di method reference
+    - cosa sono i method references
+- intent: object_methods_doubt
+  examples: |
+    - Ho visto che aprendo la classe Object non si vedono i contenuti dei metodi
+    - dove trovo o metodi della classe object in dettaglio
+    - ho un dubbio non capisco come il metodo toString() riesca a convertire un oggetto in una stringa dato che aprendo la classe object tale metodo è vuoto
+    - ho visto che aprendo la classe object non si vedono i contenuti dei metodi
+- intent: static_final_doubt
+  examples: |
+    - vorrei capire la differenza tra un metodo static e uno final
+    - vorrei capire bene i metodo static e final, cosa cambia tra i due
+    - non mi è ancora chiaro come agiscono i modificatori final e static sui metodi
+    - vorrei capire cosa cambia tra un metodo static e uno final
+- intent: visibility_variables_main
+  examples: |
+    - posso dichiarare un metodo public nel main
+    - posso dichiare una variabile public nel main
+    - posso dichiarare una attributo public nel main
+    - posso dichiarare una classe public nel main
+- intent: anonym_class_doubt
+  examples: |
+    - perchè l'operazione di new nella creazione di una classe anonima si può fare solo all'interno di un metodo
+    - l'operazione di new per creare una classe anonima si può fare solo all'interno di un metodo
+    - perchè l'operazione di new per creare una classe anonima si fa solo all'interno di un metodo
+    - non ho capito perchè l'operazione di new nella creazione di una classe anonima si può fare solo all'interno di un metodo
+- intent: equals_doubt
+  examples: |
+    - perchè se scrivo nel mio programma il metodo ugualio se uso equals, non funziona a cosa può essere dovuto l'errore
+    - perchè se scrivo nel mio programma il metodo uguali non funziona se uso equals a cosa può essere dovuto l'errore
+    - come mai il metodo uguali non funziona se uso equals invece di == nel mio programma
+    - come mai il metodo uguali non funziona se uso equals invece di ==
+- intent: arraysort_pattern_doubt
+  examples: |
+    - il metodo arrays.sort è un pattern dato che fornisce una soluzione a un problema ricorrente
+    - il metodo arrays.sort può essere visto come un pattern
+    - il metodo arrays.sort è un pattern
+    - il metodo arrays.sort potrebbe essere un pattern che fornisce una soluzione a u problema ricorrente
+- intent: charAt_doubt
+  examples: |
+    - dove è definito il metodo charAt dell'implementazione dell'interfaccia
+    - doce trovo il contenuto del metodo charAt
+    - dove viene definito il metodo charAt dell'implementazione dell'interfaccia
+    - nelle lambda functions e method references quando fa l'esempio dell'implementazione dell'interfaccia il metodo charAt dove è definito
+- intent: class_general_doubt
+  examples: |
+    - le general non perdono l'elasticità del tipo object
+    - le general perdono l'elasticità del tipo di object oppure no
+    - le general non perdono l'elasticità del tipo di instanza object
+    - le general non perdono l'elasticità del tipo object. il loro scopo é di permettere di cambiare più facilmente il tipo di dato manipolato dai suoi metodi senza intervenire sulla definizione di ogni singolo metodo
+- intent: referent_methods_doubt
+  examples: |
+    - come fa il compilatore a sapere se usare il metodo equals() della classe object originale o quello sovrascritto
+    - il compilatore come riconosce quale metodo equals() usare
+    - il compilatore come riconosce quale metodo equals() utilizzare
+    - ll compilatore sa quando usare il metodo equals() della classe object
+- intent: comparing_doubt
+  examples: |
+    - mi diresti cosa he all'interno il comparing della classe comparator
+    - mi potresti dare i dettagli di comparing
+    - mi diresti cosa contiene il comparing della classe comparator
+    - mi parleresti del metodo comparing della classe comparator
+- intent: difference_dynamic_bind_upcast
+  examples: |
+    - quali sono le differenze tra dynamic binding e upcast
+    - mi rispiegheresti quale è la differenza tra dynamic binding e upcast
+    - mi sono sorti dei dubbi ripassando dynamic binding e upcast in particolare non mi è chiara la differenza tra le due me le puoi rispiegare
+    - quale è la differenza tra dynamic binding e upcast
+- intent: hineritance_tree
+  examples: |
+    - che cosa è l'albero dell'ereditarietà
+    - che cosa è l'hineritance tree
+    - mi definiresti cosa è l'albero dell'ereditarietà
+    - mi parleresti dell'hineritance tree
+- intent: terminology
+  examples: |
+    - mi forniresti la lista di terminologie corrette da usare nell'ereditarietà
+    - dimmi le terminologie corrette da usare nelle classi ereditate
+    - quali sono le terminologie corrette usate nell'ereditarietà
+    - elencami alcune terminologie corrette usate nell'ereditarietà
+- intent: instanceof
+  examples: |
+    - cosa serve la keyword instanceof
+    - parlami della keyword instanceof
+    - fornisci un esempio con instanceof
+    - parlami dell'operatore instanceof
+- intent: this
+  examples: |
+    - cosa serve il this nelle classi
+    - a cosa serve la keyword this
+    - cosa è this
+    - parlami della keyword this
+- intent: pattern
+  examples: |
+    - che cosa è un pattern
+    - definiscimi un pattern
+    - mi sapresti definire cosa è un pattern
+    - mi definiresti cosa è un pattern
+- intent: functional_interface
+  examples: |
+    - cosa sono le functional interface
+    - mi parleresti delle functional interface
+    - raccontami qualcosa sulle interfacce funzionali
+    - mi parleresti delle interfacce funzionali
+- intent: default_methods
+  examples: |
+    - cosa sono i metodi di default
+    - cosa sono i default methods
+    - a cosa possono servire i default methods
+    - a cosa servono i default methods
+- intent: advantages
+  examples: |
+    - quali sono i suoi vantaggi
+    - mi diresti i suoi vantaggi
+    - quali sono i suoi vantaggi?
+    - mi parleresti dei suoi vantaggi
+- intent: factory_methods
+  examples: |
+    - perchè è vantaggioso usare i Factory Methods nelle interfacce rispetto ad usare un costruttore
+    - quale è il vantaggio nell'usare i factory methods nelle interfaccie
+    - mi sapresti dire il vantaggio nell'usare i factory methods nelle interfaccie
+    - non capisco bene il vantaggio dell'utilizzo dei Factory Methods nelle interfacce rispetto ad usare un costruttore
+- intent: affirm
+  examples: |
+    - ok
+    - si
+    - certo
+    - ovvio
+    - concordo
+- intent: eclipse
+  examples: |
+    - non funziona eclipse cosa faccio
+    - ho trovato un errore strano in eclipse e non funziona più niente
+    - mi si è bloccato eclipse cosa devo fare
+    - eclipse è boccato, ora che faccio
+- intent: override
+  examples: |
+    - mi diresti cosa è l'override
+    - mi parleresti dell'override
+    - mi racconteresti qualcosa sull'override
+    - definiscimi l'override
+    - come si sovrascrive un metodo
+- intent: dynamic_binding
+  examples: |
+    - cosa è il dynamic binding
+    - mi definiresti il concetto di dynamic binding
+    - mi spiegeresti il dynamic binding
+    - definiscimi il dynamic binding
+    - parlami del dynamic binding
+- intent: casting
+  examples: |
+    - definisci il casting sia implicito che esplicito
+    - a cosa serve il casting di oggetti
+    - a cosa serve la conversione dei tipi
+    - parlami della conversione dei tipi
+    - parlami del casting
+- intent: downcasting
+  examples: |
+    - mi potresti descrivere cosa è il downcast
+    - che cosa è il downcasting
+    - a che cosa serve il downcasting
+    - definiscimi il downcast
+    - raccontami il downcasting
+- intent: class_abstract
+  examples: |
+    - quali sono i vantaggi delle classi astratte
+    - mi diresti qualcosa sulle classi astratte
+    - mi spiegheresti cosa è una classe astratta
+    - mi racconti qualcosa sulle classi astratte
+- intent: comparable
+  examples: |
+    - che cosa è il comparable
+    - quando si usa il comparable
+    - mi spiegheresti qualcosa sul comparable
+    - descrivimi il comparable
+    - parlami del comparable
+- intent: iterator_iterable
+  examples: |
+    - quando si usa l'iterator
+    - quali sono i metodi di iterator
+    - descrivimi l'iterator
+    - mi spiegheresti qualcosa sull'iterator
+    - quale è la differenza tra iterator e iterable
+- intent: lambda
+  examples: |
+    - cosa è una funzione lambda
+    - mi diresti qualcosa sulle funzioni lambda
+    - come si scrive una funzione lambda
+    - parlami delle funzioni lambda
+    - mi diresti qualche cosa sulle funzioni lambda
+- intent: static_methods
+  examples: |
+    - mi descriveresti i static methods
+    - a cosa servono gli static methods
+    - cosa sono i static methods
+    - cosa sono i metodi statici
+    - cosa è uno static methods
+- intent: slides
+  examples: |
+    - sono disponibili le slide del corso
+    - dove sono le slide del corso
+    - la raccolta di slide è già disponibile
+    - è possibile avere o reporerire da qualche parte le slides del cosros
+    - su quale sito trovo le slide del corso
+- intent: polymorphism
+  examples: |
+    - mi parleresti del polimormismo
+    - parlami del polimorfismo
+    - che cosa è il polimorfismo
+    - definiscimi il polimorfismo
+    - mi racconteresti qualcosa sul polimorfismo
+    - mi spiegeresti il polimorfismo
+- intent: anonymous_class
+  examples: |
+    - come si scrive una classe anonima
+    - mi descriveresti una classe anonima
+    - mi parleresti delle classi anonime
+    - mi spiegheresti le classi anonime
+    - mi racconteresti qualcosa sulle clasi anonime
+- intent: hineritance
+  examples: |
+    - mi diresti qualcosa sull'ereditarietà
+    - spiegami l'ereditarietà
+    - quali sono i vantaggi nell'usare l'ereditarietà
+    - che cosa è l'ereditarietà
+    - definiscimi l'reditarietà
+    - cosa è l'ereditarietà
+    - ereditarietà
+    - mi spiegeresti l'ereditarietà
+- intent: interface
+  examples: |
+    - raccontami qualcosa sulle interfacce
+    - come si scrive una interfaccia
+    - mi spiegheresti cosa è una interfaccia
+    - cosa è una interfaccia
+    - mi spieghersti cosa è una interfaccia
+    - non riesco a capire quale sia l'utilità di usare un'interfaccia
+    - mi diresti qualcosa sulle interfacce
+- intent: ask_prof
+  examples: |
+    - chiedi al professore
+    - posso chiedere aiuto al professore
+    - contattami il docente
+    - contatta doc
+    - contattami un docente
+    - contatta docente
+    - chiama un docente
+    - contatta un docente
+    - chiedi aiuto al prof
+    - fammi parlare con qualcuno
+    - chiedi al docente
+    - contatta il professore
+    - chiedi aiuto al professore

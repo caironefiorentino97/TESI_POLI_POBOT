@@ -1,0 +1,21 @@
+Evaluation Results on END-TO-END level:
+rasa.core.test  -  Correct:          174 / 174
+rasa.core.test  -  Accuracy:         1.000
+
+Evaluation Results on ACTION level:
+rasa.core.test  -  Correct:          921 / 921
+rasa.core.test  -  F1-Score:         1.000
+rasa.core.test  -  Precision:        1.000
+rasa.core.test  -  Accuracy:         1.000
+rasa.core.test  -  In-data fraction: 1
+
+CV evaluation (n=6)
+rasa.model_testing  - Intent evaluation results
+rasa.nlu.test  - train Accuracy: 1.000 (0.000)
+rasa.nlu.test  - train F1-score: 1.000 (0.000)
+rasa.nlu.test  - train Precision: 1.000 (0.000)
+rasa.nlu.test  - test Accuracy: 0.983 (0.024)
+rasa.nlu.test  - test F1-score: 0.981 (0.028)
+rasa.nlu.test  - test Precision: 0.982 (0.031)
+
+

@@ -1,0 +1,42 @@
+# Configuration for Rasa NLU.
+# https://rasa.com/docs/rasa/nlu/components/
+language: it
+
+pipeline:
+  - name: ConveRTTokenizer
+  - name: LexicalSyntacticFeaturizer
+  - name: CountVectorsFeaturizer
+  - name: CountVectorsFeaturizer
+    analyzer: "char_wb"
+    min_ngram: 1
+    max_ngram: 10
+  - name: DIETClassifier
+    epochs: 300
+    constrain_similarities: True
+    model_confidence: 'linear_norm'
+  - name: EntitySynonymMapper
+  - name: ResponseSelector
+    epochs: 300
+    constrain_similarities: True
+    model_confidence: 'linear_norm'
+
+
+# Configuration for Rasa Core.
+# https://rasa.com/docs/rasa/core/policies/
+policies:
+   - name: RulePolicy
+     core_fallback_threshold: 0.1
+     core_fallback_action_name: "action_default_fallback"
+     enable_fallback_prediction: True
+   - name: MemoizationPolicy
+   - name: TEDPolicy
+     core_fallback_threshold: 0.1
+     core_fallback_action_name: "action_default_fallback"
+     enable_fallback_prediction: True
+     max_history: 5
+     epochs: 300
+     constrain_similarities: True
+     model_confidence: 'linear_norm'
+
+
+

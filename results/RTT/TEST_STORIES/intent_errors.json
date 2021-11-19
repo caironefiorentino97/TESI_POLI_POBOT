@@ -1,0 +1,18 @@
+[
+  {
+    "text": "fammi parlare con qualcuno",
+    "intent": "ask_prof",
+    "intent_prediction": {
+      "name": "affirm",
+      "confidence": 0.2624540328979492
+    }
+  },
+  {
+    "text": "mi parleresti dell'interfaccia comparable",
+    "intent": "comparable",
+    "intent_prediction": {
+      "name": "interface",
+      "confidence": 0.4916490316390991
+    }
+  }
+]

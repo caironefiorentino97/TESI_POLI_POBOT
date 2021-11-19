@@ -1,0 +1,58 @@
+version: "2.0"
+
+rules:
+
+- rule: activate form
+  steps:
+  - intent: ask_prof
+  - action: utter_text
+  - action: question_form
+  - active_loop: question_form
+
+- rule: submit form
+  condition:
+  - active_loop: question_form
+  steps:
+  - action: question_form
+  - active_loop: null
+  - action: action_send_help
+
+- rule: Say hi anytime the user says hi
+  steps:
+  - intent: greet
+  - action: utter_greet
+
+- rule: Say hi anytime the user says hi 2
+  steps:
+  - intent: goodday
+  - action: utter_goodday
+
+- rule: Say goodbye anytime the user says goodbye
+  steps:
+  - intent: goodbye
+  - action: utter_goodbye
+
+- rule: Say 'I am a bot' anytime the user challenges
+  steps:
+  - intent: bot
+  - action: utter_bot
+
+- rule: thanks at bot
+  steps:
+    - intent: thanks
+    - action: utter_thanks
+
+- rule: ask where slides
+  steps:
+    - intent: slides
+    - action: utter_slides
+
+- rule: ask graphics
+  steps:
+    - intent: GUI
+    - action: utter_GUI
+
+- rule: ask eclipse frize
+  steps:
+    - intent: eclipse
+    - action: utter_eclipse

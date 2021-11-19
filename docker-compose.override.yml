@@ -1,0 +1,11 @@
+version: "3.4"
+services:
+  app:
+     image: caironefiorentino97/tesi_nlp_actions:1
+  db:
+    volumes:
+      - db-volume:/bitnami/postgresql
+
+volumes:
+  db-volume:
+    name: db-volume

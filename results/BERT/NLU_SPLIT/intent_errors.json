@@ -1,0 +1,42 @@
+[
+  {
+    "text": "hey",
+    "intent": "greet",
+    "intent_prediction": {
+      "name": "affirm",
+      "confidence": 0.17030665278434753
+    }
+  },
+  {
+    "text": "a dopo",
+    "intent": "goodbye",
+    "intent_prediction": {
+      "name": "deny",
+      "confidence": 0.12836088240146637
+    }
+  },
+  {
+    "text": "a cosa serve il super nei costruttori",
+    "intent": "super",
+    "intent_prediction": {
+      "name": "hineritance_constructor",
+      "confidence": 0.1397715061903
+    }
+  },
+  {
+    "text": "yep",
+    "intent": "affirm",
+    "intent_prediction": {
+      "name": "deny",
+      "confidence": 0.1422179788351059
+    }
+  },
+  {
+    "text": "definiscimi la sovrascrittura dei metodi",
+    "intent": "override",
+    "intent_prediction": {
+      "name": "advantages",
+      "confidence": 0.08566078543663025
+    }
+  }
+]

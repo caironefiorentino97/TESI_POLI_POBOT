@@ -1,0 +1,13 @@
+Evaluation Results on CONVERSATION level:
+rasa.core.test  -  Correct:          174 / 174
+rasa.core.test  -  Accuracy:         1.000
+
+Evaluation Results on ACTION level:
+rasa.core.test  -  Correct:          921 / 921
+rasa.core.test  -  F1-Score:         1.000
+rasa.core.test  -  Precision:        1.000
+rasa.core.test  -  Accuracy:         1.000
+rasa.core.test  -  In-data fraction: 1
+
+
+

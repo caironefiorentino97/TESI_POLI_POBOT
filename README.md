@@ -3,7 +3,7 @@ Politecnico of Turin Thesis: "Implementation and Evaluation of an Educational Ch
 
 # GENERATE TOKEN SLACK
 NB: REMEMBER TO REGENERATE SLACK TOKENS AND CHANNEL ID IF ARE DISABLE (SEE THESIS PDF)
-- Go on your Slack App ( [App Slack](api.slack.com/apps) )-> select your app or create new -> Settings -> Install App -> (regenerate two tokens) -> Copy Tokens in `actions/Constants.py` file
+- Go on your Slack App in api.slack.com/apps -> select your app or create new -> Settings -> Install App -> (regenerate two tokens) -> Copy Tokens in `actions/Constants.py` file
 
 # RASA - LOCAL MODE
 ## Components Installation

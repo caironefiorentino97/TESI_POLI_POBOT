@@ -72,7 +72,7 @@ async def resend_request_db_and_buttons(tracker):
     conn.close()
 
 
-async def send_text_buttons(name_student, question, thread_id, id_req, id_prof, num_prof_free):
+async def send_text_buttons(question, thread_id, id_req, id_prof, num_prof_free):
     link = "{0}/archives/{1}/p{2}".format(Costants.SLACK_URL, Costants.CHANNEL_ID, thread_id)
     REQUEST = "/answer"
     if num_prof_free > 1:

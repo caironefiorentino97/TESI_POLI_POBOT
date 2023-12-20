@@ -35,7 +35,7 @@ async def send_request_db_and_buttons(tracker, question):
                  [id_req, id_profs[0]])
     conn.commit()
     conn.close()
-    await send_text_buttons(name_student, question, thread_id, id_req, id_profs[0], len(id_profs))
+    await send_text_buttons(question, thread_id, id_req, id_profs[0], len(id_profs))
 
 
 # prof send request to an other prof
@@ -68,7 +68,7 @@ async def resend_request_db_and_buttons(tracker):
         conn.execute("UPDATE Richiesta_Docente SET Disponibile=0 WHERE  IdRiq=? AND IdProf=?",
                      [id_riq, free_profs[0]])
         conn.commit()
-        await send_text_buttons(name_stud, question, thread_id, id_riq, free_profs[0], len(free_profs))
+        await send_text_buttons(question, thread_id, id_riq, free_profs[0], len(free_profs))
     conn.close()
 
 

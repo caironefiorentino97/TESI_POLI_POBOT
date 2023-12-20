@@ -58,7 +58,7 @@ async def resend_request_db_and_buttons(tracker):
     else:
         slack_conn = SlackGeneral()
         user_info = slack_conn.slack_items(stud_id)
-        name_stud = user_info['user']['name']
+        # name_stud = user_info['user']['name']
         # select all free profs
         cursor = conn.execute("SELECT idProf FROM Richiesta_Docente WHERE idRiq=? AND Disponibile=1", [id_riq])
         free_profs = []
@@ -68,7 +68,7 @@ async def resend_request_db_and_buttons(tracker):
         conn.execute("UPDATE Richiesta_Docente SET Disponibile=0 WHERE  IdRiq=? AND IdProf=?",
                      [id_riq, free_profs[0]])
         conn.commit()
-        await send_text_buttons(question, thread_id, id_riq, free_profs[0], len(free_profs))
+        await send_text_buttons(/*student_name,*/ question, thread_id, id_riq, free_profs[0], len(free_profs))
     conn.close()
 
 

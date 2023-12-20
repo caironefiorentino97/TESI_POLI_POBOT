@@ -17,7 +17,7 @@ async def send_request_db_and_buttons(tracker, question):
     slack_conn = SlackGeneral()
     user_info = slack_conn.slack_items(tracker.sender_id)
     id_student = user_info['user']['id']
-    name_student = user_info['user']['name']
+    //name_student = user_info['user']['name']
     thread_vect = tracker.latest_message['metadata']['thread_id'].split(".")
     thread_id = thread_vect[0] + thread_vect[1]
     cursor = conn.execute("INSERT INTO Richiesta(IdStud,Domanda,ThreadId) VALUES(?,?, ?)",
